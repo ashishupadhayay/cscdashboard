@@ -1,0 +1,14 @@
+{
+  "name": "csc-dashboard",
+  "file": {
+    "src": [
+      "**/*.html"
+    ]
+  },
+  "css": {
+    "src": [
+      "scss/**/*.scss"
+    ],
+    "dest": "css"
+  }
+}

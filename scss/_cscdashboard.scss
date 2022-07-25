@@ -1,0 +1,23 @@
+.csc-list {
+    list-style-type: "> ";
+}
+.csc-star {
+    white-space: nowrap;
+    .unfilled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $dark;
+    }
+    .filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        color: $info;
+    }
+}
+.csc-border-info {
+    border: 1px solid #7dfdff;
+}

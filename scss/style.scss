@@ -1,0 +1,43 @@
+// https://getbootstrap.com/docs/5.0/getting-started/introduction/
+
+@font-face {
+    font-family: MaisonNeue-Book;
+    src: url('../assets/fonts/MaisonNeue-Book.otf') format('opentype');
+}
+@font-face {
+    font-family: MaisonNeue-Demi;
+    src: url('../assets/fonts/MaisonNeue-Demi.otf') format('opentype');
+}
+@font-face {
+    font-family: MaisonNeue-Light;
+    src: url('../assets/fonts/MaisonNeue-Light.otf') format('opentype');
+}
+
+// Default variables.
+@import 'default-variables';
+
+// Bootstrap Framework.
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+// Site specific CSS.
+@import 'cscdashboard';
+
+// Medium
+@media (min-width: 992px) {  
+    @import 'cscdashboard-lg';
+}
+
+// Large
+@media (min-width: 1200px) {  
+    @import 'cscdashboard-xl';
+}
+
+// XXL
+@media (min-width: 1400px) {  
+    @import 'cscdashboard-xxl';
+}
+
+// 4K
+@media (min-width: 3840px) {  
+    @import 'cscdashboard-4k';
+}

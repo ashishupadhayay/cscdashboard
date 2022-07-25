@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Ashish Upadhayay (developer@ashish.com.au)">
+    <title>Caroma Smart Command Dashboard</title>
+    <link href="css/style.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.2/chart.min.js" integrity="sha512-zjlf0U0eJmSo1Le4/zcZI51ks5SjuQXkU0yOdsOBubjSmio9iCUp8XPLkEAADZNBdR9crRy3cniZ65LF2w8sRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <main>
+        <div class="container-fluid csc-viewport mt-4 mt-xl-0">
+            <div class="row gx-5">
+                
+                <!-- Left //-->
+                <div class="col-xl-3">
+                    <!-- Logo //-->
+                    <img src="assets/images/logo.png" class='d-block' />
+                    <!-- Banner //-->
+                    <img src="assets/images/banner.jpg" class="img-fluid d-block rounded-3 mt-4" />
+                    <!-- Card 1 //-->
+                    <div class="card rounded-3 mt-4">
+                        <div class="card-body">
+                            <h2 class="text-info">Caroma Smart Command Head Office</h2>
+                            <p class="small mt-4"><img src="assets/images/marker.png" /> L 24/100 Mount St, North Sydney NSW 2060</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 //-->
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="assets/images/info.png" />
+                                </div>
+                                <div class="col-10">
+                                    <div class="row gx-0">
+                                        <div class="col-xl-6">
+                                            <ul class="list-unstyled csc-list">
+                                                <li><span class="text-info small">2 storey office</span></li>
+                                                <li><span class="text-info small">1000 occupants</span></li>
+                                                <li><span class="text-info small">10m2/person</span></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <ul class="list-unstyled csc-list">
+                                                <li><span class="text-info small">3.5 star NABERS water</span></li>
+                                                <li><span class="text-info small">No WELL and GS rating</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 //-->
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <strong class="text-info d-block">Amenities</strong>
+                                    <ul class="list-unstyled">
+                                        <li><span class="small">4 bathroom</span></li>
+                                        <li><span class="small">4 toilets (WELS 1 to 2 star)</span></li>
+                                        <li><span class="small">2 urinals</span></li>
+                                        <li><span class="small">6 basin taps</span></li>
+                                    </ul>
+                                    <strong class="text-info d-block">Kitchen</strong>
+                                    <ul class="list-unstyled">
+                                        <li><span class="small">2 kitchens</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-xl-6">
+                                    <strong class="text-info d-block">End of trip</strong>
+                                    <ul class="list-unstyled">
+                                        <li><span class="small">1 end of trip facility</span></li>
+                                        <li><span class="small">4 toilets</span></li>
+                                        <li><span class="small">6 basin taps</span></li>
+                                        <li><span class="small">2 urinals</span></li>
+                                        <li><span class="small">14 showers</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main //-->
+                <div class="col-xl-9">
+                    <div class="row gx-5">
+                        <!-- Line Chart //-->
+                        <div class="col-xl-8 mt-4 mt-xl-0">
+                            <div class="row">
+                                <div class="col-xl-8">
+                                    <h2>Total Water Usage <span class="text-info d-inline ms-5">1.02 KL</span></h2>
+                                </div>
+                                <div class="col-xl-4">
+                                    <p class="text-xl-end text-secondary">1% comsumption rise</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <canvas id="linechart" class="mt-4" height="100">
+                                        <!-- Chart //-->
+                                    </canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Water Use Per Fixture //-->
+                        <div class="col-xl-4 mt-4 mt-xl-0">
+                            <h2>Water Use Per Fixture</h2>
+                            <div class="row gx-2 mt-4">
+                                <div class="col-3">
+                                    <div class="card">
+                                        <div class="card-body text-center px-0 py-0">
+                                            <img src="assets/images/01.png" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="h-100 position-relative bg-dark">
+                                        <div class="position-absolute top-50 start-0 translate-middle-y px-3">
+                                            <div class="row">
+                                                <div class="col-9">Industry Average</div>
+                                                <div class="col-3 fs-xxl-5">100L</div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-9 text-info">This Building</div>
+                                                <div class="col-3 text-info fs-xxl-5">100L</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gx-2 mt-4">
+                                <div class="col-3">
+                                    <div class="card">
+                                        <div class="card-body px-0 py-0 text-center">
+                                            <img src="assets/images/02.png" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="h-100 position-relative bg-dark">
+                                        <div class="position-absolute top-50 start-0 translate-middle-y px-3">
+                                            <div class="row">
+                                                <div class="col-9">Industry Average</div>
+                                                <div class="col-3 fs-xxl-5">100L</div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-9 text-info">This Building</div>
+                                                <div class="col-3 text-info fs-xxl-5">100L</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gx-2 mt-4">
+                                <div class="col-3">
+                                    <div class="card">
+                                        <div class="card-body px-0 py-0 text-center">
+                                            <img src="assets/images/03.png" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="h-100 position-relative bg-dark">
+                                        <div class="position-absolute top-50 start-0 translate-middle-y px-3">
+                                            <div class="row">
+                                                <div class="col-9">Industry Average</div>
+                                                <div class="col-3 fs-xxl-5">100L</div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-9 text-info">This Building</div>
+                                                <div class="col-3 text-info fs-xxl-5">100L</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-5 gx-5">
+                        <div class="col-xl-7">
+                            <div class="row gx-5">
+                                <div class="col-xl-5">
+                                    <!-- Hygiene Rating //-->
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h2 class="d-inline">Hygiene Rating</h2>
+                                            <div class="d-inline ms-2 position-relative csc-star">
+                                                <span class="unfilled">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                                                <span class="filled" style="width:70px">&#9733; &#9733; &#9733; &#9733; &#9733;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <p class="text-secondary">For Today</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <p class="small">Determined by hand wash duration and compliance</p>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-4 col-xxl-6">
+                                                            <img src="assets/images/data.png" class="img-fluid" />
+                                                        </div>
+                                                        <div class="col-8 col-xxl-6">
+                                                            <div class="h-100 position-relative bg-dark">
+                                                                <div class="position-absolute top-50 start-0 translate-middle-y px-3">
+                                                                    <h2 class="text-center text-warning">1.2</h2>
+                                                                    <p class="small text-center">Good Hygiene</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-7">
+                                    <!-- Flush //-->
+                                    <div class="row mt-4 mt-xl-0 gx-1">
+                                        <div class="col-4">
+                                            <div class="bg-light rounded-3 h-100 position-relative">
+                                                <div class="position-absolute top-50 start-0 translate-middle-y px-4">
+                                                    <span class="d-block">Flush</span>
+                                                    <span class="d-block text-dark small">For today</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="bg-dark px-2">
+                                                <div class="row align-items-center py-2">
+                                                    <div class="col-3">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-5 text-center text-nowrap small">Full flush</div>
+                                                    <div class="col-4 text-center">21.5%</div>
+                                                </div>
+                                            </div>
+                                            <div class="bg-dark px-2">
+                                                <div class="row align-items-center py-2 mt-1">
+                                                    <div class="col-3">
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-5 text-center text-nowrap small">Half flush</div>
+                                                    <div class="col-4 text-center">78%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Urinals/Toilets //-->
+                                    <div class="row mt-4">
+                                        <div class="col-3"></div>
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col-6 text-center py-2"><span class="small">Industry</span></div>
+                                                <div class="col-6 text-center text-info py-2"><span class="small">Building</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center g-1">
+                                        <div class="col-3">
+                                            <div class="bg-light text-center text-nowrap py-2"><span class="small">Urinals Use</span></div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row g-1">
+                                                <div class="col-6">
+                                                    <div class="bg-dark text-center py-2">21.5%</div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="bg-dark text-center text-info py-2">78%</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row align-items-center g-1 mt-0">
+                                        <div class="col-3">
+                                            <div class="bg-light text-center text-nowrap py-2"><span class="small">Toilets Use</span></div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row g-1">
+                                                <div class="col-6"><div class="bg-dark text-center py-2">21.5%</div></div>
+                                                <div class="col-6"><div class="bg-dark text-center text-info py-2">78%</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Leaks //-->
+                                    <!-- Disable
+                                    <div class="row g-1 mt-4">
+                                        <div class="col-4">
+                                            <div class="bg-dark h-100 position-relative rounded-3">
+                                                <div class="position-absolute top-50 start-0 translate-middle-y w-100 text-center">
+                                                    <span class="text-info d-block">Leak Detected</span> <span class="small">Building Status</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row g-1">
+                                                <div class="col-6"><div class="bg-info text-center text-dark text-uppercase py-2">Yes</div></div>
+                                                <div class="col-6"><div class="bg-dark text-center py-2">Minor</div></div>
+                                            </div>
+                                            <div class="row g-1 mt-0">
+                                                <div class="col-6"><div class="bg-dark text-center text-uppercase py-2">No</div></div>
+                                                <div class="col-6"><div class="bg-info text-center text-dark py-2">Major</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    //-->
+                                    <!-- Showers //-->
+                                    <div class="row g-1 mt-4">
+                                        <div class="col-3">
+                                            <div class="bg-light h-100 position-relative rounded-3">
+                                                <div class="position-absolute top-50 start-0 translate-middle-y w-100 text-center">Shower Use</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="row align-items-center g-1">
+                                                <div class="col-6 text-center py-2"><span class="small">Industry</span></div>
+                                                <div class="col-6 text-center text-info py-2"><span class="small">Building</span></div>
+                                            </div>
+                                            <div class="row align-items-center g-1">
+                                                <div class="col-6"><div class="bg-dark text-center py-2 rounded-3">8 mins</div></div>
+                                                <div class="col-6"><div class="bg-info text-center text-dark py-2 rounded-3">7 mins</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Water Usage / Bathroom Visit //-->
+                                    <p class="mt-4"><span class="small">Water per person per bathroom visit<span></p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="row align-items-center g-1">
+                                                <div class="col-6"><div class="text-center py-2"><span class="small">Industry</span></div></div>
+                                                <div class="col-6"><div class="bg-dark text-center py-2 rounded-3">7L</div></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row align-items-center g-1">
+                                                <div class="col-6"><div class="text-center py-2"><span class="small">Building</span></div></div>
+                                                <div class="col-6"><div class="bg-dark text-center text-info py-2 rounded-3 csc-border-info">5L</div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bar Chart -->
+                        <div class="col-xl-5 mt-4 mt-xl-0">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h2>Total Water Saved</h2>
+                                </div>
+                                <div class="col-4">
+                                    <h2 class="text-info text-end">1000L</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <p class="text-secondary">Last 3 months</p>
+                                </div>
+                            </div>
+                            <canvas id="barchart" class="mt-4">
+                                <!-- Chart //-->
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+    // Line Chart
+    var linechart = {
+        type: 'line',
+        data: {
+            labels: ['04AM', '06AM', '08AM', '10AM', '12PM', '02PM', '04PM', '06PM', '08PM', '10PM', '12AM', '02AM'],
+            datasets: [
+                {
+                    label: 'Previous Day',
+                    backgroundColor: 'rgba(13, 49, 89, 0.6)',
+                    borderWidth: 2,
+                    borderColor: 'rgba(13, 49, 89, 1)',
+                    data: [5,10,5,10,25,30,30,25,40,15,10,5],
+                    pointRadius: 0,
+                    pointStyle: 'line',
+                },
+                {
+                    label: 'Current Day',
+                    backgroundColor: 'rgba(125, 253, 255, 0.6)',
+                    borderWidth: 2,
+                    borderColor: 'rgba(125, 253, 255, 1)',
+                    data: [10,20,10,5,5,10,15,50,40,30,20,10],
+                    pointRadius: 0,
+                    pointStyle: 'line',
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            legend: {
+                display: true,
+                position: 'bottom',
+                align: 'start',
+                labels: {
+                    fontColor: 'rgba(255, 255, 255, 1)',
+                    padding: 30,
+                    usePointStyle: true,
+                },
+            },
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        color: 'rgba(108, 117, 125, 0.1)',
+                    },
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'TIME',
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                    ticks: {
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                }],
+                yAxes: [{
+                    display: true,
+                    gridLines: {
+                        color: 'rgba(108, 117, 125, 0.1)'
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'KILOLITRES',
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                    ticks: {
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                }],
+            },
+        },
+    };
+
+    // Bar Chart
+    var barchart = {
+        type: 'bar',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [
+                {
+                    label: 'Industry',
+                    backgroundColor: 'rgba(75, 79, 85, 0.3)',
+                    borderColor: 'rgba(75, 79, 85, 0.1)',
+                    data: [5,10,12,5,10,12],
+                }, 
+                {
+                    label: 'Building',
+                    backgroundColor: 'rgba(125, 253, 255, 1)',
+                    borderColor: 'rgba(125, 253, 255, 1)',
+                    data: [10,20,30,10,20,30],
+                },
+            ],
+        },
+        options: {
+            responsive: true,
+            legend: {
+                display: true,
+                position: 'bottom',
+                align: 'end',
+                labels: {
+                    fontColor: 'rgba(255, 255, 255, 1)',
+                },
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: true,
+                        drawBorder: true,
+                        drawOnChartArea: false,
+                        color: 'rgba(255, 255, 255, 1)',
+                    },
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'MONTH',
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                    ticks: {
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: false,
+                        color: 'rgba(235, 235, 235, 0.1)',
+                    },
+                    scaleLabel: {
+                        display: false,
+                        labelString: 'LITRES',
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    },
+                    ticks: {
+                        fontColor: 'rgba(255, 255, 255, 1)',
+                    }
+                }],
+            },
+        },
+    };
+
+    window.onload = function() {
+        var line = document.getElementById('linechart').getContext('2d');
+        window.myLine = new Chart(line, linechart);
+        var bar = document.getElementById('barchart').getContext('2d');
+        window.myLine = new Chart(bar, barchart);
+    };
+</script>
+</body>
+</html>

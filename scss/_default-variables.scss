@@ -1,0 +1,28 @@
+/*
+Caroma Smart Command
+@author Ashish Upadhayay (developer@ashish.com.au)
+*/
+
+$primary: #001f38 !default;
+$info: #7dfdff !default;
+$light: #3b4145 !default;
+$dark: #182025 !default;
+
+$font-family-base: 'MaisonNeue-Book', sans-serif;
+$headings-font-family: 'MaisonNeue-Book', sans-serif;
+$h2-font-size: 1.5rem !default;
+
+// Body
+$body-bg: #0a1217 !default;
+$body-color: #ffffff !default;
+
+// Card
+$card-spacer-y: 30px !default;
+$card-spacer-x: 30px !default;
+$card-color: #ffffff !default;
+$card-bg: rgba($dark, 1) !default;
+$card-border-radius: 0 !default;
+
+// Progress
+$progress-height: 0.25rem !default;
+$progress-bg: #000000 !default;
