@@ -14,7 +14,6 @@ npm install
 gulp watch
 ```
 This will serve the application on http://localhost:3000/
-
 Demo site available at https://cscdashboard.netlify.app/
 
 ## License
